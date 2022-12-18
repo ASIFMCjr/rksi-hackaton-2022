@@ -3,9 +3,10 @@ import {Text, View, StyleSheet,TouchableOpacity, ViewBase} from 'react-native'
 
 export const Todo = ({ todo }) => {
     return (
-        <TouchableOpacity style={styles.button} >
-            <Text style={styles.textButton}>Открытие хакатона</Text>
-            <Text style={styles.textDescriptiomButton}>В 12:00 Открытие хакатона! Вас ждёт ############### . . .</Text>
+        <TouchableOpacity style={styles.button}>
+            <Text style={styles.textButton}>{todo.title}</Text>
+            <Text style={styles.textDescriptiomButton}>{todo.titleTwo}</Text>
+            <Text style={styles.textButton}>{todo.titleThree}</Text>
         </TouchableOpacity>
     )
 }
