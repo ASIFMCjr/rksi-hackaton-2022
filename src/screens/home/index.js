@@ -2,10 +2,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import React from 'react';
 import {LinearGradient} from 'expo-linear-gradient';
 import { useState } from 'react'
-import { Post } from './components/Post';
 import axios from 'axios';
 import styled from 'styled-components';
-import {StyleSheet, Text, ScrollView, Image, Modal,TextInput, Button, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, ScrollView, Image, Modal,TextInput, Button, TouchableOpacity, View, Alert} from 'react-native';
 //Добавляет окошко мероприятия
 import { AddTodo } from '../../nav/AddTodo'
 //Внутренность мероприятия
@@ -29,11 +28,17 @@ export default function Home({navigation}) {
     });
   },[]);
 
-
-
-
-
-
+  React.useEffect(() => {
+    // axios
+    //  .get('https://639ee0017aaf11ceb88ce182.mockapi.io/items')
+    //  .then(({ data }) => {
+    //    setTodos(data);
+    //  }).catch((err) => {
+    //    console.log(err);
+    //    alert('Ошибка доступа файлов');
+    //  });
+    Alert.alert('1')
+   },[Todo]);
 
 
 
@@ -58,7 +63,7 @@ export default function Home({navigation}) {
 
   const [todos, setTodos] = useState([])
   const [modalWindow, setModalWindow] = useState(false)
-
+  
   const addTodo = (name,discription,time) => {
 
     setTodos(prev => [
@@ -108,7 +113,6 @@ export default function Home({navigation}) {
       </View>
     </View>
   );
-  
 }
 
 const styles = StyleSheet.create({
